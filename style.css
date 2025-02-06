@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #ffe6f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.rose-image {
+    margin-bottom: 20px;
+}
+
+#bouquet {
+    width: 80%;
+    border-radius: 10px;
+    animation: scaleIn 2s ease-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+#bouquet:hover {
+    transform: scale(1.1);
+}
+
+.interactive-btn {
+    margin-top: 30px;
+}
+
+#surprise-btn {
+    background-color: #f8b1cd;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+#surprise-btn:hover {
+    background-color: #eb9bbb;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.message-container {
+    display: none;
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #ff4d94;
+    font-weight: bold;
+    z-index: 5;
+    animation: fadeInUp 1s ease-out;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px;
+    color: #ff4d94;
+    bottom: 0; 
+    animation: floatHearts 5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatHearts {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(-150px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-300px) scale(1.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    #bouquet {
+        width: 90%;
+    }
+
+    .message-container {
+        font-size: 24px;
+    }
+
+    #surprise-btn {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+}
